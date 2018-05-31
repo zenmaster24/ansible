@@ -1,0 +1,59 @@
+- hosts: localhost
+  become: true
+
+  tasks:
+  - name: Add repositories
+    apt_repository:
+      repo: "{{ item }}"
+      state: present
+      update_cache: yes
+    with_items:
+    - "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+    - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
+    - "ppa:webupd8team/java"
+    - "deb http://download.opensuse.org/repositories/home:/strycore/xUbuntu_{{ ansible_distribution_version }}/ ./"
+    - "deb http://deb.playonlinux.com/ precise main"
+    - "ppa:gregory-hainaut/pcsx2.official.ppa"
+      
+  - name: Remove packages
+    package:
+      state: absent
+      name: "{{ item }}"
+    with_items:
+    - aisleriot
+    - firefox
+    - gnome-color-manager
+    - gnome-mahjongg-
+    - gnome-maps-
+    - gnome-mines
+    - gnome-orca
+    - gnome-photos
+    - gnome-power-manager
+    - gnome-sudoku
+    # - '^libreoffice*'
+    - rhythmbox
+    - simple-scan
+
+  - name: Install packages
+    package:
+      state: present
+      name: "{{ item }}"
+    with_items:
+    - apt-transport-https
+    # - aws-cli
+    - code
+    - docker.io
+    - git
+    - google-chrome-stable
+    - jstest-gtk
+    - lutris
+    - minidlna
+    - oracle-java8-installer
+    # - pcsx2
+    - playonlinux
+    - retroarch
+    - steam
+    - vagrant
+    - virtualbox
+    - winbind
+    - wine
