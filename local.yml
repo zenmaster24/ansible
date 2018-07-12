@@ -14,6 +14,9 @@
     - "deb http://download.opensuse.org/repositories/home:/strycore/xUbuntu_{{ ansible_distribution_version }}/ ./"
     - "deb http://deb.playonlinux.com/ precise main"
     - "ppa:gregory-hainaut/pcsx2.official.ppa"
+    - "ppa:nathan-renniewaldock/flux"
+    - "ppa:dolphin-emu/ppa"
+    - "ppa:mdeguzis/libregeek"
       
   - name: Remove packages
     package:
@@ -39,13 +42,38 @@
       state: present
       name: "{{ item }}"
     with_items:
+    - antimicro
+    - app-install-data-partner
     - apt-transport-https
+    - arc-theme
+    - baobab
+    - bsdutils
+    - budgie-desktop-environment
+    - budgie-dropby-applet
     # - aws-cli
     - code
+    - clementine
     - docker.io
+    - dolphin-emu
+    - evince
+    - fdisk
+    - file-roller
+    - fonts-noto-color-emoji
+    - fluxgui
+    - galculator
     - git
     - google-chrome-stable
+    - gnome-characters
+    - gnome-disk-utility
+    - gnome-screenshot
+    - gnome-system-monitor
+    - gstreamer1.0-fluendo-mp3
+    - gstreamer1.0-libav
+    - gstreamer1.0-plugins-ugly
+    - gstreamer1.0-vaapi
+    - gthumb
     - jstest-gtk
+    - libdvdread4
     - lutris
     - minidlna
     - oracle-java8-installer
