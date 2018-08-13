@@ -52,10 +52,11 @@
     - budgie-dropby-applet
     # - aws-cli
     - code
-    - clementine
+    - digikam
     - docker.io
     - dolphin-emu
     - evince
+    - exiftool
     - fdisk
     - file-roller
     - fonts-noto-color-emoji
@@ -72,16 +73,15 @@
     - gstreamer1.0-plugins-ugly
     - gstreamer1.0-vaapi
     - gthumb
+    - jq
     - jstest-gtk
     - libdvdread4
     - lutris
     - minidlna
     - oracle-java8-installer
     # - pcsx2
-    - playonlinux
     - retroarch
     - steam
     - vagrant
     - virtualbox
     - winbind
-    - wine
